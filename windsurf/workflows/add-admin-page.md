@@ -73,7 +73,7 @@ The admin page needs corresponding backend routes:
 - `PUT /api/admin/<entities>/{id}` — Update
 - `DELETE /api/admin/<entities>/{id}` — Delete
 
-These should be in `backend/app/routers/admin_<entity>.py` and registered in `backend/app/api/__init__.py`.
+These should be in `backend/app/routers/admin_<entity>.py` and registered in `backend/app/api/__init__.py`. If the endpoints doesn't exists yet, created it.
 
 ## Key Differences from Frontend
 

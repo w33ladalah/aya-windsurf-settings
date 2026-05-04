@@ -45,6 +45,14 @@ Use this when adding a feature that touches backend + frontend (and optionally a
 
 15. **Admin page:** Create in `admin/src/app/<feature>/page.tsx` (see `/add-admin-page` workflow).
 
+### Phase 4 — Documentation
+
+16. Run `/update-docs` workflow:
+    - Create `docs/<FEATURE_NAME>.md`
+    - Update `docs/README.md`
+    - Update `docs/API_REFERENCE.md` with new endpoints
+    - Update `docs/FEATURES.md` with the new capability
+
 ## Checklist
 
 - [ ] Backend model + migration applied
@@ -54,3 +62,5 @@ Use this when adding a feature that touches backend + frontend (and optionally a
 - [ ] Frontend page and components created
 - [ ] Admin service and page created (if needed)
 - [ ] Tested end-to-end (API → Frontend UI)
+- [ ] `docs/<FEATURE_NAME>.md` created
+- [ ] `docs/README.md`, `docs/API_REFERENCE.md`, `docs/FEATURES.md` updated

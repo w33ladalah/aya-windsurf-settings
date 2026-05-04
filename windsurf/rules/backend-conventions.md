@@ -45,6 +45,7 @@ backend/
 ## Patterns & Conventions
 
 ### Models
+
 - All models extend `BaseModel` from `app/models/base.py` (includes `TimestampMixin` with `created_at`/`updated_at`).
 - Use `Mapped[]` + `mapped_column()` (SQLAlchemy 2.0 style).
 - UUIDs as primary keys: `UUID(as_uuid=True), default=uuid.uuid4`.
@@ -52,17 +53,20 @@ backend/
 - Register all models in `app/models/__init__.py`.
 
 ### CRUD
+
 - CRUD classes take `db: AsyncSession` in `__init__`.
 - Provide a `get_<entity>_crud(db)` dependency function at the bottom of each file.
 - Use `select()` from `sqlalchemy.future` for queries.
 
 ### Routers
+
 - Public routes: mount directly on `app` in `main.py` with explicit prefix.
 - Protected routes: register in `app/api/__init__.py` under `api_router` (auto-protected by `get_current_active_user` dependency).
 - Admin routes: prefix with `/api/admin/`, use `get_current_active_admin` dependency.
 - Router files export `router` (protected) and optionally `public_router`.
 
 ### Schemas
+
 - Use Pydantic v2 (`BaseModel` from pydantic).
 - Separate Create/Update/Response schemas per entity.
 
